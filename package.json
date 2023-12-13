@@ -1,0 +1,10 @@
+{
+  "name": "vue3-test-app",
+  "version": "1.0.0",
+  "description": "vue3 test application from scratch",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rustam Zinnurov <sabahzinnur@gmail.com>",
+  "license": "ISC"
+}
