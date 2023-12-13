@@ -12,10 +12,18 @@
     "vue": "^3.3.11"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.2",
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@tsconfig/node18": "^2.0.1",
+    "@types/node": "^18.2.2",
     "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.39.0",
+    "eslint-plugin-vue": "^9.11.0",
+    "prettier": "^2.8.8",
     "typescript": "^5.3.3",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vue-tsc": "^1.6.5"
   }
 }
