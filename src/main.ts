@@ -1,8 +1,6 @@
-console.log('Here we go...')
+import './assets/main.scss'
 
-function a() {
-  const result = {
-    dskl: 'something',
-  }
-  console.log('sdkjldsf')
-}
+import { createApp } from 'vue'
+import App from './App.vue'
+
+createApp(App).mount('#app')
