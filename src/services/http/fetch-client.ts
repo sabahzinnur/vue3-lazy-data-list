@@ -146,7 +146,7 @@ export function getResponseError(response?: HttpResponse<ResponseError>): HttpCl
  * Make an async HTTP request using fetch.
  *
  * @param {HttpRequestConfig} config - The HTTP request configuration.
- * @returns {Promise<HttpResponse<T, D>>} The promise that resolves to the HTTP response.
+ * @returns {Promise<HttpResponse>} The promise that resolves to the HTTP response.
  * @throws {ClientError} If the request is failed.
  */
 async function makeRequest<T = any, D = any>(config: HttpRequestConfig): Promise<HttpResponse<T, D>> {

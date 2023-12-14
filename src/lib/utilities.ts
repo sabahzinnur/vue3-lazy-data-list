@@ -21,6 +21,7 @@ export function isAbsoluteURL(url: string) {
 export function combineURLs(baseURL: string, relativeURL: string) {
   return relativeURL ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') : baseURL
 }
+
 /**
  * Returns the path of the specified URL.
  * If a base URL is provided and the requested URL is a relative path, the base URL is combined with the requested URL to form the complete path.

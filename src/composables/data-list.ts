@@ -21,7 +21,7 @@ import type { ResponseInfo } from '@/services/api/api-types'
 export function useDataListStorage<T>() {
   const items: Ref<T[]> = ref([])
   const loading = ref(false)
-  // todo make it reactive
+
   const page = ref<ResponseInfo>({
     page: 0,
     results: 10,
