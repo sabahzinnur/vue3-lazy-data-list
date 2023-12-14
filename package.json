@@ -5,7 +5,8 @@
   "author": "Rustam Zinnurov <sabahzinnur@gmail.com>",
   "scripts": {
     "dev": "vite",
-    "build-only": "vite build"
+    "build": "vite build",
+    "lint": "eslint . --ext .vue,.ts --fix --ignore-path .gitignore"
   },
   "license": "ISC",
   "dependencies": {
