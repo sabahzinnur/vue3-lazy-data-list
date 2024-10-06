@@ -6,19 +6,19 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? 'vue3-lazy-data-list' : './',
+  base: process.env.NODE_ENV === 'production' ? '/vue3-lazy-data-list/' : './',
   plugins: [
     vuePlugin(),
     VitePWA({
       registerType: 'autoUpdate',
 
-      /*      devOptions: {
-              enabled: process.env.SW_DEV === 'true',
-              /!* when using generateSW the PWA plugin will switch to classic *!/
-              type: 'module',
-              navigateFallback: 'index.html',
-              suppressWarnings: true,
-            },*/
+      devOptions: {
+        enabled: process.env.SW_DEV === 'true',
+        /* when using generateSW the PWA plugin will switch to classic */
+        type: 'module',
+        navigateFallback: 'index.html',
+        suppressWarnings: true,
+      },
       workbox: {
         runtimeCaching: [
           {
