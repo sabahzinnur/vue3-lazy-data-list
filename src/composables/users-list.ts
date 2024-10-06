@@ -32,23 +32,24 @@ export function useUsersList(perPage?: number) {
    * @return {void} - This method does not return any value.
    */
   function fetchUsers(params: UsersListRequestParams = {}) {
-    return
-    if (!loading.value) {
-      loading.value = true
-      page.value.page++
-      userService
-        .getUsers({
-          ...params,
-          page: page.value.page,
-          results: page.value.results,
-        })
-        .then(data => {
-          addItems(data.results)
-          responseInfo.value = data.info
-        })
-        .finally(() => {
-          loading.value = false
-        })
+    if (navigator.onLine) {
+      if (!loading.value) {
+        loading.value = true
+        page.value.page++
+        userService
+          .getUsers({
+            ...params,
+            page: page.value.page,
+            results: page.value.results,
+          })
+          .then(data => {
+            addItems(data.results)
+            responseInfo.value = data.info
+          })
+          .finally(() => {
+            loading.value = false
+          })
+      }
     }
   }
 
