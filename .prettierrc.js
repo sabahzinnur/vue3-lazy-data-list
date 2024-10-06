@@ -2,7 +2,7 @@ module.exports = {
   printWidth: 120,
   tabWidth: 2,
   useTabs: false,
-  semi: false, //  Only add semicolons at the beginning of lines that may introduce ASI failures
+  semi: false,
   singleQuote: true,
   quoteProps: 'as-needed',
   trailingComma: 'es5',
