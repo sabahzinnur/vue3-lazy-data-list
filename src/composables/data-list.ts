@@ -18,8 +18,8 @@ import type { ResponseInfo } from '@/services/api/api-types'
  *   - addItems: A function to add items to the list
  *   - setItems: A function to set the list of items
  */
-export function useDataListStorage<T>() {
-  const items: Ref<T[]> = ref([])
+export function useDataListStorage<T>(initialItems: T[] = [], onSetItems?: (data: T[]) => void) {
+  const items: Ref = ref<T[]>(initialItems)
   const loading = ref(false)
 
   const page = ref<ResponseInfo>({
@@ -32,11 +32,14 @@ export function useDataListStorage<T>() {
   })
 
   function addItems(data: T[]) {
-    items.value.push(...data)
+    setItems([...items.value, ...data])
   }
 
   function setItems(data: T[]) {
     items.value = data
+    if (onSetItems && typeof onSetItems === 'function') {
+      onSetItems(data)
+    }
   }
 
   return { items, addItems, setItems, loading, page, responseInfo }

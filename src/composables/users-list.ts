@@ -2,6 +2,7 @@ import type { UserDTO, UsersListRequestParams } from '@/services/api/api-types'
 
 import { useUserService } from '@/services/api'
 import { useDataListStorage } from '@/composables/data-list'
+import { store } from '@/store/lists'
 
 /**
  * Fetches a list of users and manages the state of loading, users list and pagination.
@@ -16,7 +17,9 @@ import { useDataListStorage } from '@/composables/data-list'
  */
 export function useUsersList(perPage?: number) {
   const userService = useUserService()
-  const { items, addItems, page, loading, responseInfo } = useDataListStorage<UserDTO>()
+  const { items, addItems, page, loading, responseInfo } = useDataListStorage<UserDTO>(store.state.users, data =>
+    store.set('users', data)
+  )
 
   if (perPage) {
     page.value.results = perPage
@@ -29,6 +32,7 @@ export function useUsersList(perPage?: number) {
    * @return {void} - This method does not return any value.
    */
   function fetchUsers(params: UsersListRequestParams = {}) {
+    return
     if (!loading.value) {
       loading.value = true
       page.value.page++
