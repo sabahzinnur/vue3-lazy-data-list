@@ -1,7 +1,7 @@
 <template>
   <div class="card-container">
     <span class="pro">{{ user?.name.title }}</span>
-    <img class="round" crossorigin="anonymous" :src="user?.picture.medium" alt="user" />
+    <img class="round" :src="user?.picture.medium" alt="user" />
     <h3>{{ user.name?.first }} {{ user.name?.last }}</h3>
     <h6>{{ user.location?.city }}</h6>
     <p>
