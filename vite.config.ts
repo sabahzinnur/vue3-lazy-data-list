@@ -47,6 +47,20 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: ({ url, sameOrigin }) => !sameOrigin && /\.(png|jpg|jpeg\svg)$/.test(url.pathname),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'remote-images-cache',
+              expiration: {
+                maxEntries: 1000,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+              },
+              cacheableResponse: {
+                statuses: [200],
+              },
+            },
+          },
+          {
             urlPattern: /\.(?:js|css)$/i,
             handler: 'StaleWhileRevalidate',
             options: {
